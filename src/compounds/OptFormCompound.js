@@ -8,7 +8,7 @@ function OptFormCompound() {
   return (
     <>
       <OptFormText>
-        Ready to watch? Enter your email to create or restart your membership.
+        Ready to watch? Enter your email to create your membership <br/>and see all your Birthday Messages.
       </OptFormText>
       <OptFormWrapper>
         <OptFormEmail placeholder="Email Address" />

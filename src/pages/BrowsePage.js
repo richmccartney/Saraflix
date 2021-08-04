@@ -23,50 +23,33 @@ import PlayerOverlay from "../components/Movies/PlayerOverlay";
 import FooterCompound from "../compounds/FooterCompound";
 
 function BrowsePage() {
-  let { series } = useContent("series");
-  series = [
+  let { family } = useContent("family");
+  family = [
     {
-      title: "Documentaries",
-      data: series.filter((item) => item.genre === "documentaries"),
+      title: "Toronto",
+      data: family.filter((item) => item.genre === "toronto"),
     },
     {
-      title: "Comedies",
-      data: series.filter((item) => item.genre === "comedies"),
-    },
-    {
-      title: "Children",
-      data: series.filter((item) => item.genre === "children"),
-    },
-    { title: "Crime", data: series.filter((item) => item.genre === "crime") },
-    {
-      title: "Feel-Good",
-      data: series.filter((item) => item.genre === "feel-good"),
+      title: "Eastbourne",
+      data: family.filter((item) => item.genre === "eastbourne"),
     },
   ];
 
-  let { films } = useContent("films");
-  films = [
-    { title: "Drama", data: films.filter((item) => item.genre === "drama") },
+  let { messages } = useContent("messages");
+  messages = [
+    { title: "Canada", data: messages.filter((item) => item.genre === "canada") },
     {
-      title: "Thriller",
-      data: films.filter((item) => item.genre === "thriller"),
+      title: "Eastbourne",
+      data: messages.filter((item) => item.genre === "eastbourne"),
     },
     {
-      title: "Children",
-      data: films.filter((item) => item.genre === "children"),
-    },
-    {
-      title: "Suspense",
-      data: films.filter((item) => item.genre === "suspense"),
-    },
-    {
-      title: "Romance",
-      data: films.filter((item) => item.genre === "romance"),
+      title: "London",
+      data: messages.filter((item) => item.genre === "london"),
     },
   ];
 
-  const [category, setCategory] = useState("films");
-  const currentCategory = category === "films" ? films : series;
+  const [category, setCategory] = useState("messages");
+  const currentCategory = category === "messages" ? messages : family;
   const [showCardFeature, setShowCardFeature] = useState(false);
   const [activeItem, setActiveItem] = useState(false);
   const [showPlayer, setShowPlayer] = useState(false);
@@ -78,31 +61,21 @@ function BrowsePage() {
           <Logo />
           <HeaderLink
             className={
-              category === "films" ? "header-link-bold" : "header-link"
+              category === "messages" ? "header-link-bold" : "header-link"
             }
-            onClick={() => setCategory("films")}
+            onClick={() => setCategory("messages")}
           >
-            Films
-          </HeaderLink>
-          <HeaderLink
-            className={
-              category === "series" ? "header-link-bold" : "header-link"
-            }
-            onClick={() => setCategory("series")}
-          >
-            Series
+            Messages
           </HeaderLink>
         </NavBar>
         <FeatureWrapper>
           <FeatureTitle className="feature-title-browse">
-            Watch Joker Now
+            Happy 30th Birthday Sara
           </FeatureTitle>
           <FeatureSubTitle className="feature-subtitle-browse">
-            Forever alone in a crowd, failed comedian Arthur Fleck seeks
-            connection as he walks the streets of Gotham City. Arthur wears two
-            masks, the one he paints for his day job as a clown, and the guise
-            he projects in a futile attempt to feel like he is part of the world
-            around him.
+            Happy Birthday to the caring, beautiful and amazing person you are. Enjoy all the messages
+            people have sent in. Mayy all your dreams turn into reality and have an amazing day. Happy birthday to one of the sweetest people I’ve ever known.
+            My finacée, my love, my Sara. Richard x
           </FeatureSubTitle>
           <PlayButton onClick={() => setShowPlayer(true)}>Play</PlayButton>
           {showPlayer ? (
@@ -132,23 +105,25 @@ function BrowsePage() {
             </AllCardsWrapper>
             {showCardFeature &&
             slideItem.title.toLowerCase() === activeItem.genre ? (
-              <CardFeatureWrapper
-                style={{
-                  backgroundImage: `url(../images/${category}/${activeItem.genre}/${activeItem.slug}/large.jpg)`,
-                }}
-              >
-                <CardTitle>{activeItem.title}</CardTitle>
-                <CardDescription>{activeItem.description}</CardDescription>
-                <CardFeatureClose onClick={() => setShowCardFeature(false)} />
-                <PlayButton onClick={() => setShowPlayer(true)}>
-                  Play
-                </PlayButton>
-                {showPlayer ? (
-                  <PlayerOverlay onClick={() => setShowPlayer(false)}>
-                    <PlayerVideo src="../videos/video.mp4" type="video/mp4" />
-                  </PlayerOverlay>
-                ) : null}
-              </CardFeatureWrapper>
+              <div className="backdrop">
+                <CardFeatureWrapper
+                  style={{
+                    backgroundImage: `url(../images/${category}/${activeItem.genre}/${activeItem.slug}/large.jpg)`,
+                  }}
+                >
+                  <CardTitle>{activeItem.title}</CardTitle>
+                  <CardDescription>{activeItem.description}</CardDescription>
+                  <CardFeatureClose onClick={() => setShowCardFeature(false)} />
+                  <PlayButton onClick={() => setShowPlayer(true)}>
+                    Play
+                  </PlayButton>
+                  {showPlayer ? (
+                    <PlayerOverlay onClick={() => setShowPlayer(false)}>
+                      <PlayerVideo src={`../videos/${category}/${activeItem.genre}/${activeItem.slug}/video.mp4`} type="video/mp4" />
+                    </PlayerOverlay>
+                  ) : null}
+                </CardFeatureWrapper>
+              </div>
             ) : null}
           </SlideWrapper>
         ))}

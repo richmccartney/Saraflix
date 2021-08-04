@@ -48,7 +48,6 @@ function SigninPage() {
         </NavBar>
         <SignFormWrapper>
           <SignFormBase onSubmit={handleSubmit} method="POST">
-            <Warning>NOT official Netflix</Warning>
             <SignFormTitle>Sign In</SignFormTitle>
             {error ? <SignFormError>{error}</SignFormError> : null}
             <SignFormInput
@@ -66,7 +65,7 @@ function SigninPage() {
             />
             <SignFormButton disabled={IsInvalid}>Sign In</SignFormButton>
             <SignFormText>
-              New to Netflix?
+              New to Saraflix?
               <SignFormLink href="/signup">Sign up now.</SignFormLink>
             </SignFormText>
             <SignFormCaptcha>

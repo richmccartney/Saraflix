@@ -1,24 +1,24 @@
 [
   {
     "id": 1,
-    "title": "Enjoy on your TV.",
-    "subTitle": "Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.",
+    "title": "Enjoy all your birthday messages.",
+    "subTitle": "Watch them at home, and see all these messages from around the world",
     "image": "../images/misc/home-tv.jpg",
     "alt": "Tiger King on Netflix",
     "direction": "row"
   },
   {
     "id": 2,
-    "title": "Download your programmes to watch on the go.",
-    "subTitle": "Save your data and watch all your favourites offline.",
+    "title": "Just remember you're only 30 once!",
+    "subTitle": "Watch all your favourites here, and have an amazing day!",
     "image": "../images/misc/home-mobile.jpg",
     "alt": "Tiger King on Netflix",
     "direction": "row-reverse"
   },
   {
     "id": 3,
-    "title": "Watch everywhere.",
-    "subTitle": "Stream unlimited films and TV programmes on your phone, tablet, laptop and TV without paying more.",
+    "title": "Have an amazing day!",
+    "subTitle": "Sara, we all hope you have an amazing day. Your loved and you are an amazing and beautiful.",
     "image": "../images/misc/home-imac.jpg",
     "alt": "Money Heist on Netflix",
     "direction": "row"

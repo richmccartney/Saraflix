@@ -15,12 +15,9 @@ function HeaderCompound({ children }) {
         <SigninButton>Sign In</SigninButton>
       </NavBar>
       <FeatureWrapper className="feature-wrapper-home">
-        <FeatureTitle className="feature-title-home">
-          Unlimited movies, TV shows and more.
+        <FeatureTitle className="feature-title-home" style={{ 'margin-bottom': '24px' }}>
+          Happy 30th Birthday Sara
         </FeatureTitle>
-        <Warning>
-          This is NOT official Netflix
-        </Warning>
       </FeatureWrapper>
       {children}
     </HeaderWrapper>

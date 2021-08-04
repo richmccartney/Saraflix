@@ -6,7 +6,7 @@ function Logo({ children, ...restProps }) {
     <div>
       <a href="/" {...restProps}>
         {children}
-        <img className="logo" href="/" src="./images/misc/logo.svg" alt="Netflix logo" />
+        <img className="logo" href="/" src="./images/misc/logo.png" alt="Saraflix logo" />
       </a>
     </div>
   );
